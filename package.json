@@ -1,0 +1,44 @@
+{
+  "name": "dkswcm-ssr",
+  "version": "1.0.0",
+  "description": "단국대학교 소프트웨어학과 커뮤니티",
+  "author": "junil-hwang <tjsdlf4261@naver.com>",
+  "private": true,
+  "nuxt": {
+    "host": "0.0.0.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.1",
+    "mysql": "^2.15.0",
+    "nuxt": "^1.4.0",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.3.0",
+    "cross-env": "^5.1.5",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.9.0",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.0.1"
+  }
+}
