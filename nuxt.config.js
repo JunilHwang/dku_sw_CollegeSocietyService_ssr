@@ -37,9 +37,6 @@ module.exports = {
         })
       }
     },
-    plugins:[
-      '~/plugins/dkswcm_ssr'
-    ],
     vendor:[
       'axios',
       '~/plugins/dkswcm'
