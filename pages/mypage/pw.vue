@@ -8,19 +8,19 @@
                     <ul>
                         <li>
                             <label>
-                                <strong>현재 비밀번호 확인</strong>
+                                <strong><i class="fas fa-check"></i> 현재 비밀번호 확인</strong>
                                 <input type="password" name="pw_before" class="input fullSize" placeholder="현재 비밀번호를 입력해주세요" required autofocus>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>새 비밀번호</strong>
+                                <strong><i class="fas fa-check"></i> 새 비밀번호</strong>
                                 <input type="password" name="pw" class="input fullSize" placeholder="현재 비밀번호를 입력해주세요" required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>새 비밀번호 확인</strong>
+                                <strong><i class="fas fa-check"></i> 새 비밀번호 확인</strong>
                                 <input type="password" name="pw_re" class="input fullSize" placeholder="현재 비밀번호를 입력해주세요" required>
                             </label>
                         </li>

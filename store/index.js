@@ -5,11 +5,13 @@ import Vue from 'vue'
 const restUrl = 'http://127.0.0.1:5000'
 export const store = () => new Vuex.Store({
     state: {
-        isMember: true,
+        //isMember: true,
+        isMember: false,
         isAdmin: false,
         isHeader: true,
         isFooter: true,
-        member: {idx: 1,id:"test", pw:"1234", name:"테스터"},
+        //member: {idx: 1,id:"test", pw:"1234", name:"테스터"},
+        member: null,
         categoryList: {},
         nowCategory: 'notice'
     },

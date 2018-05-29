@@ -26,6 +26,7 @@ img{max-width:100%;max-height:100%;border:0;margin:0;padding:0;}
 label{cursor:pointer;}
 input,textarea,select,option,button{font-family:inherit;font-weight:200;}
 table{border-collapse:collapse;border-spacing:0;}
+i{vertical-align:middle;display:inline-block;}
 
 @include pc () {
     .mobile{display:none}
@@ -111,6 +112,7 @@ label.file{border:1px solid #ddd;display:inline-block;padding:7px 20px;width:100
         strong{font-size:13px;}
         textarea{padding:10px;border-radius:3px;}
     }
+    .fa-check{color:$color1}
 }
 
 /* view */
@@ -242,3 +244,5 @@ label.file{border:1px solid #ddd;display:inline-block;padding:7px 20px;width:100
 
 /* board public */
 .board-title{font-size:17px;border-bottom:1px solid #ddd;margin-bottom:15px;padding-bottom:15px;}
+
+.fr-wrapper>div:first-child:not(.fr-element){display:none !important;}

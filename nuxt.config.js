@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 module.exports = {
   /*
   ** Headers of the page
@@ -12,6 +13,7 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/fontawesome-all.min.css' },
+      // { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' },
       { rel: 'stylesheet', href: '/css/jquery-ui.min.css' },
       { rel: 'stylesheet', href: '/css/nanumbarungothic.css' }
     ]
@@ -24,9 +26,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -39,10 +38,19 @@ module.exports = {
     },
     vendor:[
       'axios',
-      '~/plugins/dkswcm'
+      '~/plugins/dkswcm',
+    ],
+    plugins: [
+      new webpack.ProvidePlugin({
+        '$': 'jquery',
+        jQuery: 'jquery',
+      }),
     ]
   },
   css: [
-    '@/assets/css/common.scss'
+    // '~node_modules/vue-wysiwyg/dist/vueWysiwyg.css',
+    // '~node_modules/froala-editor/css/froala_editor.pkgd.min.css',
+    // '~node_modules/froala-editor/css/froala_style.min.css',
+    '~/assets/css/common.scss'
   ]
 }

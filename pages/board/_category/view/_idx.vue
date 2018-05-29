@@ -8,17 +8,17 @@
             </span>
             <span class="date-time">
                 <i class="far fa-calendar-alt"></i>
-                {{getDateFormat(boardData.date)}}
+                {{getDateFormat(boardData.date_format)}}
             </span>
             <span class="hits">
                 <i class="fas fa-eye"></i>
                 {{boardData.hit}}
             </span>
         </div>
-        <div class="boardContent" v-html="getContent()" />
+        <div class="boardContent" v-html="boardData.content" />
         <div class="btn_group">
             <router-link :to="`/board/${$route.params.category}/list`" class="btn default">목록</router-link>
-            <template v-if="$store.state.member.idx === boardData.writer">
+            <template v-if="$store.state.isMember && $store.state.member.idx === boardData.writer">
                 <router-link :to="`/board/${$route.params.category}/write/${$route.params.idx}`" class="btn submit">수정</router-link>
                 <a href="#" class="btn submit" @click="boardDelete">삭제</a>
             </template>
@@ -53,11 +53,8 @@ export default {
             const _this = this
             this.deleteData(`/board/${idx}`, function (data) {
                 alert('삭제 되었습니다.')
-                _this.$router.push('/board/list/' + _this.$route.params.category)
+                _this.$router.push('/board/' + _this.$route.params.category + '/list')
             })
-        },
-        getContent () {
-            return this.boardData.content.replace(/\n/g, '<br />')
         },
         getDateFormat (date) {
             return dkswcm.getDateFormat(date)
@@ -66,13 +63,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import "~/assets/css/_base.scss";
+    @import "~/assets/css/_board-content.scss";
     .subject-line{border-bottom:1px dashed #ddd;padding-bottom:15px;margin-bottom:15px;color:#aaa;
         span+span{padding-left:20px;}
         i{display:inline-block;width:20px;vertical-align:middle;color:$color2-1;}
         strong{color:#000;}
     }
     .subject{font-size:23px;padding-bottom:10px;color:#444;}
-    .boardContent{min-height:200px;padding:20px;line-height:175%}
+    .boardContent{min-height:200px;line-height:175%;
+        @include boardContent();
+    }
 </style>

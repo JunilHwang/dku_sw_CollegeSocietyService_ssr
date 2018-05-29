@@ -2,13 +2,13 @@
     <header id="header">
         <div class="content">
             <h3 class="logo">
-                <nuxt-link to="/">
+                <a href="/">
                     <img src="/img/dk-logo.png" alt="단국대학교" width="200" />
                     <p>College Society Service</p>
-                </nuxt-link>
+                </a>
             </h3>
             <div class="util">
-                <nuxt-link to="/">홈</nuxt-link>
+                <a href="/">홈</a>
                 <template v-if="$store.state.isMember">
                     <a href="#" @click="logout">로그아웃</a>
                     <nuxt-link to="/mypage">마이페이지</nuxt-link>
@@ -36,7 +36,6 @@ export default {
     methods: {
         async logout () {
             this.$http.get('/api/logout').then((response) => {
-                this.$router.push('/')
                 this.$store.commit('logout')
                 alert('로그아웃 되었습니다.')
             })

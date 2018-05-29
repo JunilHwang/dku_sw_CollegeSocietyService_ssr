@@ -1,0 +1,58 @@
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight'
+import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials'
+import Uploadadapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter'
+import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat'
+import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold'
+import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic'
+import Blockquote from '@ckeditor/ckeditor5-block-quote/src/blockquote'
+import Easyimage from '@ckeditor/ckeditor5-easy-image/src/easyimage'
+import Heading from '@ckeditor/ckeditor5-heading/src/heading'
+import Image from '@ckeditor/ckeditor5-image/src/image'
+import Imagecaption from '@ckeditor/ckeditor5-image/src/imagecaption'
+import Imagestyle from '@ckeditor/ckeditor5-image/src/imagestyle'
+import Imagetoolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar'
+import Link from '@ckeditor/ckeditor5-link/src/link'
+import List from '@ckeditor/ckeditor5-list/src/list'
+import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph'
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment'
+
+ClassicEditor.build = {
+    plugins: [
+        Highlight,
+        Essentials,
+        Uploadadapter,
+        Autoformat,
+        Bold,
+        Italic,
+        Blockquote,
+        Easyimage,
+        Heading,
+        Image,
+        Imagecaption,
+        Imagestyle,
+        Imagetoolbar,
+        Link,
+        List,
+        Paragraph,
+        Alignment
+    ],
+    config: {
+        fontSize: {
+            options: [ 11, 13, 'default', 15, 17, 19, 21]
+        },
+        highlight: {
+            options: [
+                { model: 'yellowMarker', class: 'marker-yellow', title: 'Yellow Marker', color: 'var(--ck-highlight-marker-yellow)', type: 'marker' },
+                { model: 'greenMarker', class: 'marker-green', title: 'Green marker', color: 'var(--ck-highlight-marker-green)', type: 'marker' },
+                { model: 'pinkMarker', class: 'marker-pink', title: 'Pink marker', color: 'var(--ck-highlight-marker-pink)', type: 'marker' },
+                { model: 'blueMarker', class: 'marker-blue', title: 'Blue marker', color: 'var(--ck-highlight-marker-blue)', type: 'marker' },
+                { model: 'redPen', class: 'pen-red', title: 'Red pen', color: 'var(--ck-highlight-pen-red)', type: 'pen' },
+                { model: 'greenPen', class: 'pen-green', title: 'Green pen', color: 'var(--ck-highlight-pen-green)', type: 'pen' }
+            ]
+        },
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'fontSize', 'bulletedList', 'numberedList', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', 'undo', 'redo'],
+        language: 'ko'
+    }
+};
+export default ClassicEditor
