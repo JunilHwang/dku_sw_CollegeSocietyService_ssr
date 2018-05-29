@@ -8,47 +8,47 @@
                     <ul>
                         <li>
                             <label>
-                                <strong>아이디</strong>
+                                <strong><i class="fas fa-check"></i> 아이디</strong>
                                 <input type="text" name="id" id="join_id" class="input fullSize" placeholder="아이디를 입력해주세요" required autofocus>
                                 <p class="addiction">영문+숫자 조합 8~16글자</p>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>비밀번호</strong>
+                                <strong><i class="fas fa-check"></i> 비밀번호</strong>
                                 <input type="password" name="pw" class="input fullSize" placeholder="비밀번호를 입력해주세요" required>
                                 <p class="addiction">영문 + 숫자 + 특수문자 조합 8 ~ 16글자</p>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>비밀번호 확인</strong>
+                                <strong><i class="fas fa-check"></i> 비밀번호 확인</strong>
                                 <input type="password" name="pw_re" class="input fullSize" placeholder="비밀번호를 다시 입력해주세요" required>
                                 <p class="addiction">비밀번호를 다시 입력해주세요</p>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>성명</strong>
+                                <strong><i class="fas fa-check"></i> 성명</strong>
                                 <input type="text" name="name" class="input fullSize" placeholder="이름을 입력해주세요." required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>닉네임</strong>
+                                <strong><i class="fas fa-check"></i> 닉네임</strong>
                                 <input type="text" name="nickname" class="input fullSize" placeholder="닉네임을 입력해주세요." required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>이메일</strong>
-                                <input type="text" name="email" class="input fullSize" placeholder="이메일을 입력해주세요." required>
+                                <strong><i class="fas fa-check"></i> 이메일</strong>
+                                <input type="text" name="email" class="input fullSize" placeholder="이메일을 입력해주세요." pattern="([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)" title="이메일 형식으로 입력해주세요." required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>학번</strong>
-                                <input type="text" name="undergrad_number" class="input fullSize" placeholder="학번을 입력해주세요." required>
+                                <strong><i class="fas fa-check"></i> 학번</strong>
+                                <input type="text" name="undergrad_number" class="input fullSize" placeholder="학번을 입력해주세요." pattern="([0-9]{8})" title="8자리 숫자로 입력해주세요" required>
                             </label>
                         </li>
                     </ul>
@@ -75,8 +75,8 @@ export default {
             this.postData('/member', this.serialize(frm), function (res) {
                 let data = res.data
                 if (data === true) {
-                    alert('회원가입이 완료되었습니다')
-                    _this.$router.push('/')
+                    alert('회원가입이 완료되었습니다. 학생 인증 후 로그인해주세요.')
+                    location.href = '/'
                 } else {
                     alert('중복된 아이디가 있습니다')
                     console.log(data)

@@ -8,25 +8,25 @@
                     <ul>
                         <li>
                             <label>
-                                <strong>성명</strong>
+                                <strong><i class="fas fa-check"></i> 성명</strong>
                                 <input type="text" name="name" :value="member.name || null" class="input fullSize" placeholder="이름을 입력해주세요." required autofocus>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>닉네임</strong>
+                                <strong><i class="fas fa-check"></i> 닉네임</strong>
                                 <input type="text" name="nickname" :value="member.nickname || null" class="input fullSize" placeholder="닉네임을 입력해주세요." required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>이메일</strong>
+                                <strong><i class="fas fa-check"></i> 이메일</strong>
                                 <input type="text" name="email" :value="member.email || null" class="input fullSize" placeholder="이메일을 입력해주세요." required>
                             </label>
                         </li>
                         <li>
                             <label>
-                                <strong>현재 비밀번호 확인</strong>
+                                <strong><i class="fas fa-check"></i> 현재 비밀번호 확인</strong>
                                 <input type="password" name="pw" class="input fullSize" placeholder="현재 비밀번호를 입력해주세요" required>
                             </label>
                         </li>

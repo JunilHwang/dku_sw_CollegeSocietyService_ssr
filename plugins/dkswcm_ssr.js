@@ -21,7 +21,15 @@ export default {
         axios.delete(url).then(fun)
     },
     getDateFormat (date) {
-        const now = moment(date)
-        return now.format('YYYY-MM-DD HH:mm:ss')
+        const now = moment()
+        const newDate = moment(date)
+        let formatString = 'YYYY/MM/DD HH:mm';
+        if (now.format('YYYY') === newDate.format('YYYY')) {
+            formatString = 'MM/DD HH:mm'
+            if (now.format('YYYY/MM/DD') === newDate.format('YYYY/MM/DD')) {
+                formatString = 'HH:mm'
+            }
+        }
+        return newDate.format(formatString)
     }
 }

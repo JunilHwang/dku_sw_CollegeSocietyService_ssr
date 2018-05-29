@@ -2,12 +2,15 @@ import Vue from 'vue'
 import axios from 'axios'
 import 'es6-promise/auto'
 import moment from 'moment'
-import $ from 'jquery'
+//import VueFroala from 'vue-froala-wysiwyg'
+//import 'froala-editor/js/froala_editor.pkgd.min.js'
+
 
 Vue.config.productionTip = false
 const restUrl = 'http://220.149.235.59:5000'
 
 Vue.prototype.$http = axios
+//Vue.use(VueFroala)
 Vue.mixin({
     methods: {
         getJsonData (url, fun) {
@@ -31,7 +34,7 @@ Vue.mixin({
         },
         getDateFormat (date) {
             const now = moment(date)
-            return now.format('YYYY-MM-DD HH:mm:ss')
+            return now.format('YYYY-MM-DD HH:mm')
         },
         serialize (target) {
             return $(target).serialize()

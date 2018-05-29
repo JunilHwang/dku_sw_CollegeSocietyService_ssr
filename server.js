@@ -54,5 +54,5 @@ if (config.dev) {
     builder.build()
 }
 app.use(nuxt.render)
-app.listen(8000)
-console.log('Server is listening on http://localhost:8000')
+app.listen(3000)
+console.log('Server is listening on http://localhost:3000')
