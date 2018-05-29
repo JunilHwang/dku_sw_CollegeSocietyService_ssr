@@ -33,8 +33,16 @@ Vue.mixin({
             this.$store.commit('activeCategory', index)
         },
         getDateFormat (date) {
-            const now = moment(date)
-            return now.format('YYYY-MM-DD HH:mm')
+            const now = moment()
+            const newDate = moment(date)
+            let formatString = 'YYYY/MM/DD HH:mm';
+            if (now.format('YYYY') === newDate.format('YYYY')) {
+                formatString = 'MM/DD HH:mm'
+                if (now.format('YYYY/MM/DD') === newDate.format('YYYY/MM/DD')) {
+                    formatString = 'HH:mm'
+                }
+            }
+            return newDate.format(formatString)
         },
         serialize (target) {
             return $(target).serialize()
