@@ -5,7 +5,7 @@ import moment from 'moment'
 import $ from 'jquery'
 
 Vue.config.productionTip = false
-const restUrl = 'http://127.0.0.1:5000'
+const restUrl = 'http://220.149.235.59:5000'
 
 Vue.prototype.$http = axios
 Vue.mixin({
