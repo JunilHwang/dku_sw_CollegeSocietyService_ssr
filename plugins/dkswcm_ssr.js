@@ -2,7 +2,7 @@ import axios from 'axios'
 import 'es6-promise/auto'
 import moment from 'moment'
 
-const restUrl = 'http://127.0.0.1:5000'
+const restUrl = 'http://133.186.146.221:5000'
 export default {
     getJsonData (url, fun) {
         url = `${restUrl}${url}`

@@ -7,7 +7,7 @@ import moment from 'moment'
 
 
 Vue.config.productionTip = false
-const restUrl = 'http://127.0.0.1:5000'
+const restUrl = 'http://133.186.146.221:5000'
 
 Vue.prototype.$http = axios
 //Vue.use(VueFroala)
